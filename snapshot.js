@@ -1,6 +1,5 @@
 require('dotenv').config();
 var terrajs = require("@terra-money/terra.js");
-const { ValAddresses } = require('@terra-money/terra.proto/cosmos/staking/v1beta1/staking');
 var fs = require("fs");
 const DEFAULTRPC = "https://lcd.terra.dev";
 const terra = new terrajs.LCDClient({
@@ -24,7 +23,6 @@ if (terra.config.URL == DEFAULTRPC) {
     console.log("Using public RPC, rate limit added.");
     waitDelay = 100;
 }
-
 
 const d = new Date();
 var snapshotTime = d.toLocaleDateString() + `-${d.getHours()}-${d.getMinutes()}-${d.getSeconds()}`;
