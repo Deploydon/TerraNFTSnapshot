@@ -8,7 +8,7 @@ const terra = new terrajs.LCDClient({
 });
 
 console.log("RPC URL : " + process.env.RPCURL);
-const SKIPCONTRACTS = process.env.SKIPCONTRACTS || false; //if true, NFTs held by contracts will not be included. (Marketplace settlement contracts, Multi-Sig wallets, etc)
+const SKIPCONTRACTS = process.env.SKIPCONTRACTS === "true" || false; //if true, NFTs held by contracts will not be included. (Marketplace settlement contracts, Multi-Sig wallets, etc)
 const SNAPFOLDER = process.env.SNAPSHOTFOLDER || "snapshots";
 const numTokens = process.env.NUMTOKENS || null;
 const nftContract = process.env.NFTCONTRACT || null;
